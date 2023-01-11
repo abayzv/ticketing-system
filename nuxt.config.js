@@ -37,8 +37,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
+
+  // Axios configuration
+  axios: {
+    baseURL: 'https://dummyjson.com'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -48,5 +54,43 @@ export default {
         autoprefixer: {},
       },
     },
+  },
+
+  // Auth Configuration
+  auth: {
+    strategies: {
+        local : {
+            endpoints: {
+                login: {
+                    url : '/auth/login',
+                    method: 'post',
+                    propertyName: 'jwt'
+                },
+                user: {
+                    url: '/users/me',
+                    method: 'get'
+                },
+                logout: {
+                    url : '/auth/logout',
+                    method: 'get'
+                }
+            },
+            token: {
+                property: 'jwt'
+            },
+            user: {
+                property: false,
+                autoFetch: true // default
+            },
+        }
+    },
+    redirect: {
+        login: '/auth/login',
+    }
+  },
+
+  // Router Middleware
+  router: {
+    middleware: ['auth']
   }
 }
