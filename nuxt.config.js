@@ -32,7 +32,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-     '@nuxt/postcss8',
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -59,38 +59,53 @@ export default {
   // Auth Configuration
   auth: {
     strategies: {
-        local : {
-            endpoints: {
-                login: {
-                    url : '/auth/login',
-                    method: 'post',
-                    propertyName: 'jwt'
-                },
-                user: {
-                    url: '/users/me',
-                    method: 'get'
-                },
-                logout: {
-                    url : '/auth/logout',
-                    method: 'get'
-                }
-            },
-            token: {
-                property: 'jwt'
-            },
-            user: {
-                property: false,
-                autoFetch: true // default
-            },
+      local: {
+        endpoints: {
+          login: {
+            url: '/auth/login',
+            method: 'post',
+            propertyName: 'user'
+          },
+          user: {
+            url: '/auth/RESOURCE',
+            method: 'get'
+          },
+          logout: {
+            url: '/auth/logout',
+            method: 'get'
+          }
+        },
+        token: {
+          property: 'token',
+          global: true,
+        },
+        user: {
+          property: false,
+          autoFetch: true // default
         }
+      }
     },
     redirect: {
-        login: '/auth/login',
-    }
+      login: '/auth/login',
+      logout: '/',
+      callback: '/auth/login',
+      home: '/'
+    },
+
   },
 
   // Router Middleware
   router: {
     middleware: ['auth']
+  },
+
+  // localStorage Prefix
+  localStorage: {
+    prefix: 'auth.'
+  },
+
+  token: {
+    prefix: '_token.',
+    global: true,
   }
 }
