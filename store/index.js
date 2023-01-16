@@ -3,6 +3,7 @@ export const state = () => {
         email: 'flou@admin.com',
         password: 'pass789',
         isLogin: localStorage.getItem('isLogin') || false,
+        avatar: 'https://i.pravatar.cc/150?img=37'
     }
 }
 

@@ -4,7 +4,7 @@
         <div class="ml-auto">
             <div></div>
             <div class="flex items-center gap-2">
-                <img src="https://i.pravatar.cc/50" alt="" class="rounded-full w-[45px] border-[3px] border-primary">
+                <img :src="store.state.avatar" alt="" class="rounded-full w-[45px] border-[3px] border-primary">
                 <div class="relative">
                     <span @click="toggleDropDown()"
                         class="text-[#808080] font-nunito font-medium flex items-center gap-1 cursor-pointer">John

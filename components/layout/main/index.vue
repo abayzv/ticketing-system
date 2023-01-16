@@ -3,7 +3,9 @@
         <LayoutSidebar />
         <div class="w-full">
             <LayoutHeader />
-            <slot />
+            <div class="p-10 px-16">
+                <slot />
+            </div>
         </div>
     </div>
 </template>

@@ -1,11 +1,17 @@
 <template>
     <div>
         <Layout>
-            Hello World
+            <!-- Breadcumb -->
+            <Breadcumb :menu="breadCumb" />
+
+            <!-- Card -->
+            <div class="grid grid-cols-4 gap-10">
+                <DashboardCardInfo v-for="(item, index) in cardItems" :key="index" :items="item" />
+            </div>
+
+            <!-- NPS -->
+            <NPS class="my-10" />
         </Layout>
-        <!-- <form @submit.prevent="logout()">
-      <Button type="submit">Logout</Button>
-    </form> -->
     </div>
 </template>
 
@@ -23,10 +29,46 @@ export default {
             router.push('/auth/login')
         }
 
+        const breadCumb = [
+            {
+                text: 'Dashboard',
+                to: '/dashboard'
+            },
+            {
+                text: 'Home',
+                to: '/dashboard/home'
+            }
+        ]
+
+        const cardItems = [
+            {
+                title: 'Support Team Officers',
+                value: 15,
+                color: 'primary'
+            },
+            {
+                title: 'Number Of Team',
+                value: 3,
+                color: 'gray'
+            },
+            {
+                title: 'Online Support Team',
+                value: 15,
+                color: 'secondary'
+            },
+            {
+                title: 'Ticket On Progress',
+                value: 30,
+                color: 'warning'
+            }
+        ]
+
         return {
             store,
             router,
-            logout
+            logout,
+            breadCumb,
+            cardItems
         }
     },
 
