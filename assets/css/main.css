@@ -1,3 +1,70 @@
+/* import montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    font-family: 'Nunito', sans-serif;
+}
+
+.font-nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Icon Start */
+.icon {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.email {
+    background-image: url('/icons/email.svg');
+}
+
+.eye {
+    background-image: url('/icons/eye.svg');
+}
+
+.dashboard {
+    background-image: url('/icons/dashboard.svg');
+}
+
+.support {
+    background-image: url('/icons/support.svg');
+}
+
+.teams {
+    background-image: url('/icons/teams.svg');
+}
+
+.compensation {
+    background-image: url('/icons/compensation.svg');
+}
+
+.task-list {
+    background-image: url('/icons/task-list.svg');
+}
+
+.statistic {
+    background-image: url('/icons/statistic.svg');
+}
+
+.chevron-down {
+    background-image: url('/icons/chevron-down.svg');
+}
+
+/* Icon End */
