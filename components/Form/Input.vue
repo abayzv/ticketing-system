@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col gap-2 mb-4 font-nunito">
+    <div class="flex flex-col gap-2 font-nunito">
         <label class="text-sm font-bold leading-[20px] tracking-wide" for="">{{ label }}</label>
         <div class="relative">
-            <input class="border-[#DFDFDF] rounded-[4px] border p-3 text-sm w-full" v-model="value[name]"
+            <input class="border-[#DFDFDF] rounded-[4px] border p-3 text-sm w-full bg-[#FBFCFC]" v-model="value[name]"
                 :type="inputType" />
             <i v-if="label.toLocaleLowerCase().includes('email')"
                 class="icon email absolute top-[13px] right-[15px]"></i>

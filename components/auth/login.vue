@@ -11,8 +11,8 @@
             <Card>
                 <h1 class="text-[24px] font-bold my-4 text-center text-secondary">Login</h1>
                 <form @submit.prevent="userLogin()">
-                    <FormInput label="Email Address" name="email" v-model="form" />
-                    <FormInput label="Password" name="password" v-model="form" inputType="password" />
+                    <FormInput class="mb-4" label="Email Address" name="email" v-model="form" />
+                    <FormInput class="mb-4" label="Password" name="password" v-model="form" inputType="password" />
                     <div class="flex items-center justify-between">
                         <a href="" class="text-secondary font-medium leading-1 text-sm">Forgot Password?
                             <span class="block"> Please contact administrator</span>

@@ -1,18 +1,17 @@
 <template>
-    <div>
-        <Layout>
-            <!-- Breadcumb -->
-            <Breadcumb :menu="breadCumb" />
+    <Layout>
+        <!-- Card -->
+        <div class="grid grid-cols-4 gap-10 my-10">
+            <DashboardCardInfo v-for="(item, index) in cardItems" :key="index" :items="item" />
+        </div>
 
-            <!-- Card -->
-            <div class="grid grid-cols-4 gap-10">
-                <DashboardCardInfo v-for="(item, index) in cardItems" :key="index" :items="item" />
-            </div>
+        <!-- NPS -->
+        <NPS class="my-10" />
 
-            <!-- NPS -->
-            <NPS class="my-10" />
-        </Layout>
-    </div>
+        <!-- Ticket -->
+        <Ticket title="Recent Tickets" class="my-10" />
+
+    </Layout>
 </template>
 
 <script>

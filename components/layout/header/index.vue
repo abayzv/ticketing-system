@@ -1,5 +1,5 @@
 <template>
-    <div class="py-3 flex bg-[#F1F1F2] border-b px-5 border-[#DFDFDF]">
+    <div class="py-2 flex bg-[#F1F1F2] border-b px-5 border-[#DFDFDF] sticky top-0 z-10">
         <div></div>
         <div class="ml-auto">
             <div></div>

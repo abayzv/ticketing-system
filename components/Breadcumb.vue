@@ -2,11 +2,11 @@
     <div
         class="font-nunito font-semibold text-xl border-l border-[#DFDFDF] pl-5 tracking-wider text-secondary flex mb-5">
         <div v-for="(item, index) in menu" :key="index">
-            <nuxt-link v-if="index != 0" :to="item.to">
-                {{ item.text }}
+            <nuxt-link v-if="index != 0" :to="item.path">
+                {{ kebabToTitle(item.name) }}
             </nuxt-link>
-            <span class="text-[#808080]" v-else>
-                {{ item.text }}
+            <span :class="menu.length === 1 ? 'text-secondary' : 'text-[#808080]'" v-else>
+                {{ kebabToTitle(item.name) }}
             </span>
             <span class="mr-2" v-if="index < menu.length - 1">\</span>
         </div>
@@ -14,11 +14,28 @@
 </template>
 
 <script>
+import { useRoute } from '@nuxtjs/composition-api'
+
 export default {
-    props: {
-        menu: {
-            type: Array,
-            default: () => []
+    setup() {
+        const route = useRoute();
+        const routePath = route.value.path.split('/').filter((item) => item != '');
+
+        const menu = routePath.map((item) => {
+            return {
+                name: item,
+                path: '/' + item
+            }
+        })
+
+        const kebabToTitle = (str) => {
+            return str.replace(/-/g, ' ').replace(/\w\S*/g, (txt) => {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        }
+        return {
+            menu,
+            kebabToTitle
         }
     }
 }

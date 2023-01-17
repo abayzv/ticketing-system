@@ -67,4 +67,24 @@ button {
     background-image: url('/icons/chevron-down.svg');
 }
 
+.email-blue {
+    background-image: url('/icons/email-blue.svg');
+}
+
+.email-open-gray {
+    background-image: url('/icons/email-open-gray.svg');
+}
+
+.email-open-secondary {
+    background-image: url('/icons/email-open-secondary.svg');
+}
+
 /* Icon End */
+
+/* Line Clamp */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
