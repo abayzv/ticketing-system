@@ -1,18 +1,19 @@
 <template>
-    <div class="flex flex-col gap-2 font-nunito">
+    <div class="flex flex-col gap-2 font-nunito" v-click-outside="close">
         <label class="text-sm font-bold leading-[20px] tracking-wide" for="">{{ label }}</label>
         <div class="relative">
             <div @click="toggleOpen()"
-                class="border-[#DFDFDF] rounded-[4px] border p-3 text-sm w-full flex justify-between items-center bg-[#FBFCFC] relative cursor-pointer"
+                class="border-[#DFDFDF] text-[#808080] rounded-[4px] border p-3 text-sm w-full flex justify-between items-center bg-[#FBFCFC] relative cursor-pointer"
                 :class="{ 'ring-2 ring-secondary': open }">
-                test
+                Select {{ label }}
                 <i class="icon chevron-down"></i>
-                <div v-if="open" class="absolute top-14 left-0 border border-[#DFDFDF] bg-white w-full p-3 rounded">
+                <div v-if="open"
+                    class="absolute top-14 left-0 border border-[#DFDFDF] bg-white w-full py-2 rounded overflow-clip">
                     <ul>
-                        <li>Test</li>
-                        <li>Test</li>
-                        <li>Test</li>
-                        <li>Test</li>
+                        <li v-for="(item, index) in data" :key='index'
+                            class="py-2 px-3 hover:bg-primary hover:text-white">
+                            {{ item.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -53,6 +54,10 @@ export default {
             open.value = !open.value
         }
 
+        const close = () => {
+            open.value = false
+        }
+
         watch(input, (newValue) => {
             props.value = newValue
         })
@@ -60,7 +65,8 @@ export default {
         return {
             input,
             open,
-            toggleOpen
+            toggleOpen,
+            close
         }
     }
 }

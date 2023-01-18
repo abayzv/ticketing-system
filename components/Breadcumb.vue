@@ -2,10 +2,11 @@
     <div
         class="font-nunito font-semibold text-xl border-l border-[#DFDFDF] pl-5 tracking-wider text-secondary flex mb-5">
         <div v-for="(item, index) in menu" :key="index">
-            <nuxt-link v-if="index != 0" :to="item.path">
+            <nuxt-link v-if="item.path !== ''" :class="{ 'text-[#808080] hover:text-secondary': index == 0 }"
+                :to="item.path">
                 {{ kebabToTitle(item.name) }}
             </nuxt-link>
-            <span :class="menu.length === 1 ? 'text-secondary' : 'text-[#808080]'" v-else>
+            <span :class="menu.length === 1 || index != 0 ? 'text-secondary' : 'text-[#808080]'" v-else>
                 {{ kebabToTitle(item.name) }}
             </span>
             <span class="mr-2" v-if="index < menu.length - 1">\</span>
@@ -21,12 +22,14 @@ export default {
         const route = useRoute();
         const routePath = route.value.path.split('/').filter((item) => item != '');
 
-        const menu = routePath.map((item) => {
+        const menu = routePath.map((item, index) => {
             return {
                 name: item,
-                path: '/' + item
+                path: index === routePath.length - 1 ? '' : '/' + item
             }
         })
+
+        console.log(menu)
 
         const kebabToTitle = (str) => {
             return str.replace(/-/g, ' ').replace(/\w\S*/g, (txt) => {
