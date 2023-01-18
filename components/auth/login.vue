@@ -43,7 +43,7 @@ export default {
         const userLogin = () => {
             if (form.email === store.state.email && form.password === store.state.password) {
                 store.commit('setLogin', true)
-                router.push('/')
+                router.push('/dashboard')
             } else {
                 alert('Email or Password is wrong')
             }

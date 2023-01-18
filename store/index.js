@@ -2,7 +2,7 @@ export const state = () => {
     return {
         email: 'flou@admin.com',
         password: 'pass789',
-        isLogin: localStorage.getItem('isLogin') || false,
+        isLogin: JSON.parse(localStorage.getItem('isLogin')),
         avatar: 'https://i.pravatar.cc/150?img=37'
     }
 }

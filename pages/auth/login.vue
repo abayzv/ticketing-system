@@ -10,16 +10,12 @@ export default {
         const store = useStore()
         const router = useRouter()
 
+        if (store.state.isLogin) router.push('/')
+
         return {
             store,
             router
         }
     },
-
-    mounted() {
-        if (this.store.state.isLogin) {
-            this.router.push('/')
-        }
-    }
 }
 </script>

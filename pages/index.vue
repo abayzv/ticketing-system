@@ -27,13 +27,5 @@ export default {
       logout
     }
   },
-
-  mounted() {
-    if (!this.store.state.isLogin) {
-      this.router.push('/auth/login')
-    } else {
-      this.router.push('/dashboard')
-    }
-  }
 }
 </script>

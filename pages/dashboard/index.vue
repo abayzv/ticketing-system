@@ -28,6 +28,8 @@ export default {
             router.push('/auth/login')
         }
 
+        if (!store.state.isLogin) router.push('/auth/login')
+
         const breadCumb = [
             {
                 text: 'Dashboard',
@@ -70,11 +72,5 @@ export default {
             cardItems
         }
     },
-
-    mounted() {
-        if (!this.store.state.isLogin) {
-            this.router.push('/auth/login')
-        }
-    }
 }
 </script>
