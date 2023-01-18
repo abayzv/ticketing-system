@@ -6,7 +6,8 @@
                     :label="item.name" :type="item.type" />
                 <FormSelect v-else-if="item.type === 'select'" class="justify-items-end" :name="item.name" :value="form"
                     :label="item.name" :type="item.type" :data="item.data" />
-                <FormDate v-else-if="item.type === 'date-range'" ref="date" />
+                <FormDate type="range" v-else-if="item.type === 'date-range'" :value="form" />
+                <!-- <DatePicker v-else-if="item.type === 'date-range'" v-model="form" /> -->
             </template>
         </div>
         <div>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+// import { Calendar, DatePicker } from 'v-calendar';
 export default {
     props: {
         filter: {
@@ -30,7 +32,11 @@ export default {
             form,
         }
 
-    }
+    },
+    // components: {
+    //     Calendar,
+    //     DatePicker
+    // }
 }
 
 </script>

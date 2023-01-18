@@ -79,6 +79,10 @@ button {
     background-image: url('/icons/email-open-secondary.svg');
 }
 
+.calendar {
+    background-image: url('/icons/calendar.svg');
+}
+
 /* Icon End */
 
 /* Line Clamp */
