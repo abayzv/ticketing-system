@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DataTableFilter :filter="filter" class="mb-7" />
+        <DataFilter :filter="filter" class="mb-7" />
         <table class="w-full tracking-wider font-nunito text-sm">
             <thead class="bg-primary text-white border border-primary">
                 <tr class="text-left">

@@ -6,6 +6,7 @@
                     :label="item.name" :type="item.type" />
                 <FormSelect v-else-if="item.type === 'select'" class="justify-items-end" :name="item.name" :value="form"
                     :label="item.name" :type="item.type" :data="item.data" />
+                <FormDate v-else-if="item.type === 'date-range'" ref="date" />
             </template>
         </div>
         <div>
