@@ -2,6 +2,9 @@
     <Layout>
         <!-- Data Filter -->
         <DataFilter :filter="filter" />
+
+        <!-- Ticker Record -->
+        <Ticket />
     </Layout>
 </template>
 

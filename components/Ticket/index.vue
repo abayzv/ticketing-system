@@ -2,7 +2,8 @@
     <div>
         <div class="flex items-center justify-between">
             <Title>{{ title }}</Title>
-            <NuxtLink class="font-nunito text-sm text-secondary font-bold tracking-wider" to="/">See More</NuxtLink>
+            <NuxtLink v-if="title" class="font-nunito text-sm text-secondary font-bold tracking-wider" to="/">See More
+            </NuxtLink>
         </div>
         <div class="grid gap-3 mt-5">
             <TicketCard v-for="(item, index) in ticket" :key="index" :items="item" :index="index" />

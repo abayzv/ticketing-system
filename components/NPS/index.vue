@@ -2,7 +2,8 @@
     <div>
         <div class="flex items-center justify-between">
             <Title>Support Ticket NPS</Title>
-            <NuxtLink class="font-nunito text-sm text-secondary font-bold tracking-wider" to="/">See More</NuxtLink>
+            <NuxtLink v-if="isDashboard" class="font-nunito text-sm text-secondary font-bold tracking-wider" to="/">See
+                More</NuxtLink>
         </div>
         <div class="w-full flex mt-5">
             <NPSChart class="w-3/4" />
@@ -15,6 +16,12 @@
 
 <script>
 export default {
+    props: {
+        isDashboard: {
+            type: Boolean,
+            default: true
+        }
+    },
     setup() {
         const cardItems = [
             {

@@ -51,6 +51,10 @@ button {
     background-image: url('/icons/teams.svg');
 }
 
+.teams-primary {
+    background-image: url('/icons/teams-primary.svg');
+}
+
 .compensation {
     background-image: url('/icons/compensation.svg');
 }

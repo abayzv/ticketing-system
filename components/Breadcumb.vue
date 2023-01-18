@@ -1,6 +1,6 @@
 <template>
     <div
-        class="font-nunito font-semibold text-xl border-l border-[#DFDFDF] pl-5 tracking-wider text-secondary flex mb-5">
+        class="font-nunito font-semibold text-xl border-l -ml-3 border-[#DFDFDF] pl-3 tracking-wider text-secondary flex mb-5">
         <div v-for="(item, index) in menu" :key="index">
             <nuxt-link v-if="item.path !== ''" :class="{ 'text-[#808080] hover:text-secondary': index == 0 }"
                 :to="item.path">
@@ -28,8 +28,6 @@ export default {
                 path: index === routePath.length - 1 ? '' : '/' + item
             }
         })
-
-        console.log(menu)
 
         const kebabToTitle = (str) => {
             return str.replace(/-/g, ' ').replace(/\w\S*/g, (txt) => {
