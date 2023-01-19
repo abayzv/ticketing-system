@@ -25,19 +25,9 @@ export default {
                 link: '/dashboard',
             },
             {
-                name: 'Support Officer',
-                icon: 'support',
-                link: '/support-officer'
-            },
-            {
-                name: 'Teams',
-                icon: 'teams',
-                link: '/teams'
-            },
-            {
-                name: 'Compensation',
-                icon: 'compensation',
-                link: '/compensation'
+                name: 'New Ticket',
+                icon: 'new-ticket',
+                link: '/new-ticket'
             },
             {
                 name: 'Ticket Records',
@@ -45,9 +35,9 @@ export default {
                 link: '/ticket-records'
             },
             {
-                name: 'NPS Statistic',
-                icon: 'statistic',
-                link: '/nps-statistic'
+                name: 'FAQ',
+                icon: 'faq',
+                link: '/faq'
             }
         ]
 

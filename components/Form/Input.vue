@@ -1,10 +1,8 @@
 <template>
     <div>
-        <div v-if="formType === 'horizontal'" class="flex gap-5 items-center">
-            <div class="w-1/3">
-                <span v-if="required" class="text-[#ff0000] font-semibold">*</span>
-                <label class="text-sm font-bold leading-[20px] tracking-wide" for="">{{ label }}</label>
-            </div>
+        <div v-if="horizontal" class="flex gap-3 font-nunito w-full items-center mb-3">
+            <label class="text-sm w-2/5 text-end font-bold leading-[20px] tracking-wide" for=""><span v-if="required"
+                    class="text-[#ff0000] font-semibold">*</span>{{ label }} :</label>
             <div class="relative w-full">
                 <input
                     class="border-[#DFDFDF] rounded-[4px] border p-3 text-sm w-full focus:outline-none focus:ring-2 focus:ring-secondary bg-[#FBFCFC]"
@@ -45,8 +43,9 @@ export default {
             type: String,
             required: true
         },
-        formType: {
-            type: String,
+        horizontal: {
+            type: Boolean,
+            default: false
         },
         required: {
             type: Boolean,

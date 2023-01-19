@@ -33,6 +33,7 @@ button {
 
 .email {
     background-image: url('/icons/email.svg');
+    /* background clip */
 }
 
 .eye {
@@ -85,6 +86,14 @@ button {
 
 .calendar {
     background-image: url('/icons/calendar.svg');
+}
+
+.faq {
+    background-image: url('/icons/faq.svg');
+}
+
+.new-ticket {
+    background-image: url('/icons/new-ticket.svg');
 }
 
 /* Icon End */
