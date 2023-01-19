@@ -6,7 +6,9 @@
             :class="{ 'email-blue': items.status === 'active', 'email-open-secondary': items.status === 'proggress', 'email-open-gray': items.status === 'closed' }"></i>
         <div class="grid gap-2 w-full">
             <div class="flex items-center justify-between">
-                <div class="font-bold">{{ items.title }}</div>
+                <div class="font-bold flex gap-2 items-center">{{ items.title }}
+                    <span v-if="items.status == 'active'" class="w-2 h-2 bg-[#87BD24] block rounded-full"></span>
+                </div>
                 <span class="bg-[#F60505] text-white text-sm px-4 rounded-full">Overdue - 11 Oct 2022 10.00</span>
             </div>
             <div class="flex items-center justify-between">
