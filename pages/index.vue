@@ -16,16 +16,17 @@ export default {
     const store = useStore()
     const router = useRouter()
 
-    const logout = () => {
-      store.commit('setLogin', false)
+    if (store.state.isLogin){
+      router.push('/dashboard')
+    } else {
       router.push('/auth/login')
     }
 
-    return {
-      store,
-      router,
-      logout
-    }
+      return {
+        store,
+        router,
+        logout
+      }
   },
 }
 </script>
