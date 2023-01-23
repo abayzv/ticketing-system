@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "build": "nuxt build --openssl-legacy-provider",
+    "start": "nuxt start --openssl-legacy-provider",
     "generate": "nuxt generate"
   },
   "dependencies": {
