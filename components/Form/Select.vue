@@ -1,12 +1,12 @@
 <template>
     <div v-if="horizontal" class="flex gap-3 font-nunito w-full items-center mb-3" v-click-outside="close">
         <label class="text-sm w-2/5 text-end font-bold leading-[20px] tracking-wide" for=""><span v-if="required"
-                class="text-sm text-[#FF0000] font-bold">*</span>{{ label }} :</label>
+                class="text-sm text-[#FF0000] font-bold">*</span>{{ title }} :</label>
         <div class="relative w-full">
             <div @click="toggleOpen()"
                 class="border-[#DFDFDF] text-[#808080] rounded-[4px] border p-3 text-sm w-full flex justify-between items-center bg-[#FBFCFC] relative cursor-pointer"
                 :class="{ 'ring-2 ring-secondary': open }">
-                {{ Object.keys(input).length > 0 ? input : `Select ${label}` }}
+                {{ Object.keys(input).length > 0 ? input : `Select ${title}` }}
                 <i class="icon chevron-down"></i>
                 <div v-if="open"
                     class="absolute top-14 left-0 border z-10 border-[#DFDFDF] bg-white w-full py-2 rounded overflow-clip">
@@ -21,12 +21,12 @@
         </div>
     </div>
     <div v-else class="flex flex-col gap-2 font-nunito" v-click-outside="close">
-        <label class="text-sm font-bold leading-[20px] tracking-wide" for="">{{ label }}</label>
+        <label class="text-sm font-bold leading-[20px] tracking-wide" for="">{{ title }}</label>
         <div class="relative">
             <div @click="toggleOpen()"
                 class="border-[#DFDFDF] text-[#808080] rounded-[4px] border p-3 text-sm w-full flex justify-between items-center bg-[#FBFCFC] relative cursor-pointer"
                 :class="{ 'ring-2 ring-secondary': open }">
-                Select {{ label }}
+                Select {{ title }}
                 <i class="icon chevron-down"></i>
                 <div v-if="open"
                     class="absolute top-14 left-0 border border-[#DFDFDF] bg-white w-full py-2 rounded overflow-clip">
@@ -48,7 +48,7 @@ import { computed, ref, watch } from 'vue'
 
 export default {
     props: {
-        label: {
+        title: {
             type: String,
             required: true
         },
