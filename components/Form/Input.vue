@@ -15,9 +15,9 @@
                 <input
                     class="border-[#DFDFDF] rounded-[4px] border p-3 text-sm w-full focus:outline-none focus:ring-2 focus:ring-secondary bg-[#FBFCFC]"
                     v-model="dataInput" :type="inputType" :placeholder="`Enter ${title}`" />
-                <i v-if="title.toLocaleLowerCase().includes('email')"
+                <i v-if="title?.toLocaleLowerCase().includes('email')"
                     class="icon email absolute top-[13px] right-[15px]"></i>
-                <i v-if="title.toLocaleLowerCase().includes('password')" @click="setShowPassword"
+                <i v-if="title?.toLocaleLowerCase().includes('password')" @click="setShowPassword"
                     class="icon eye absolute top-[13px] right-[15px] cursor-pointer hover:opacity-80"></i>
             </div>
         </div>
